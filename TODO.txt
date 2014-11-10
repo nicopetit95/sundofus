@@ -1,0 +1,4 @@
+-> Faire une condition pour la file d'attente du REALM (Si le dernier client connecté s'est connecté il y a moins de 2 secondes par exemple) -> OK (16.10.2013) !
+-> Faire la file d'attente du serveur de jeu -> OK (16.10.2013) !
+-> Ajouter les conditions des droits de guilde -> OK (17.10.2013) !
+-> Finir la révision totale du code -> OK (16.10.2013) !

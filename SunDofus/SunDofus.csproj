@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C1DBF4D7-B4F3-4941-969C-3078F936954C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SunDofus</RootNamespace>
+    <AssemblyName>SunDofus</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SunDofus.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>G:\Programmierung\CSHARP\Chatbox - Review\Chatbox - Server\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SilverSock">
+      <HintPath>G:\Programmierung\CSHARP\Chatbox - Review\Chatbox - Client\bin\Debug\SilverSock.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Requests\Client\AccountsRequests.cs" />
+    <Compile Include="Entities\Requests\Client\GiftsRequests.cs" />
+    <Compile Include="Master\TCPClient.cs" />
+    <Compile Include="Master\TCPServer.cs" />
+    <Compile Include="Network\Realm\RealmClient.cs" />
+    <Compile Include="Network\Realm\RealmServer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Basic.cs" />
+    <Compile Include="Utilities\BooleanByte.cs" />
+    <Compile Include="Utilities\CellZone.cs" />
+    <Compile Include="Utilities\Config.cs" />
+    <Compile Include="Utilities\Formulas.cs" />
+    <Compile Include="Utilities\Loggers.cs" />
+    <Compile Include="Utilities\MySQLHelper.cs" />
+    <Compile Include="Entities\Requests\Client\CharactersRequests.cs" />
+    <Compile Include="Entities\Requests\Client\ItemsRequests.cs" />
+    <Compile Include="Entities\Requests\World\BanksRequests.cs" />
+    <Compile Include="Entities\Requests\World\CollectorsRequests.cs" />
+    <Compile Include="Entities\Requests\World\GuildsRequest.cs" />
+    <Compile Include="Entities\Requests\World\LevelsRequests.cs" />
+    <Compile Include="Entities\Requests\Maps\MapsRequests.cs" />
+    <Compile Include="Entities\Requests\Maps\MonstersRequests.cs" />
+    <Compile Include="Entities\Requests\Maps\NoPlayerCharacterRequests.cs" />
+    <Compile Include="Entities\Requests\Client\SpellsRequests.cs" />
+    <Compile Include="Entities\Requests\Maps\TriggersRequests.cs" />
+    <Compile Include="Entities\Models\Clients\AccountModel.cs" />
+    <Compile Include="Entities\Models\Clients\GiftModel.cs" />
+    <Compile Include="Entities\Models\Items\ItemModel.cs" />
+    <Compile Include="Entities\Models\Items\ItemUsableModel.cs" />
+    <Compile Include="Entities\Models\Items\SetModel.cs" />
+    <Compile Include="Entities\Models\Levels\LevelModel.cs" />
+    <Compile Include="Entities\Models\Maps\MapModel.cs" />
+    <Compile Include="Entities\Models\Maps\TriggerModel.cs" />
+    <Compile Include="Entities\Models\Monsters\MonsterLevelModel.cs" />
+    <Compile Include="Entities\Models\Monsters\MonsterModel.cs" />
+    <Compile Include="Entities\Models\NPC\NoPlayerCharacterModel.cs" />
+    <Compile Include="Entities\Models\NPC\NPCsAnswer.cs" />
+    <Compile Include="Entities\Models\NPC\NPCsQuestion.cs" />
+    <Compile Include="Entities\Models\Spells\SpellLevelModel.cs" />
+    <Compile Include="Entities\Models\Spells\SpellModel.cs" />
+    <Compile Include="Entities\Models\Spells\SpellToLearn.cs" />
+    <Compile Include="Entities\Requests\Maps\ZaapisRequests.cs" />
+    <Compile Include="Entities\Requests\Maps\ZaapsRequests.cs" />
+    <Compile Include="World\Bank\Bank.cs" />
+    <Compile Include="World\Bank\BankExchange.cs" />
+    <Compile Include="World\Bank\BanksManager.cs" />
+    <Compile Include="World\Characters\CharacterEnemies.cs" />
+    <Compile Include="World\Characters\CharacterFriends.cs" />
+    <Compile Include="World\Characters\CharacterJobs.cs" />
+    <Compile Include="World\Characters\Jobs\Job.cs" />
+    <Compile Include="World\Characters\Stats\AbstractStats.cs" />
+    <Compile Include="World\Characters\Stats\EffectEnum.cs" />
+    <Compile Include="World\Characters\Stats\GenericStat.cs" />
+    <Compile Include="World\Characters\Stats\GenericStats.cs" />
+    <Compile Include="World\Characters\Stats\StatEnum.cs" />
+    <Compile Include="World\Characters\Stats\Stats.cs" />
+    <Compile Include="World\Effects\EffectSpellTarget.cs" />
+    <Compile Include="World\Exchanges\ExchangePlayer.cs" />
+    <Compile Include="World\Guilds\Guild.cs" />
+    <Compile Include="World\Guilds\GuildCollector.cs" />
+    <Compile Include="World\Guilds\GuildMember.cs" />
+    <Compile Include="World\Maps\Fights\ChallengeFight.cs" />
+    <Compile Include="World\Maps\Fights\CharacterFighter.cs" />
+    <Compile Include="World\Maps\Fights\Effects\BuffProcessor.cs" />
+    <Compile Include="World\Maps\Fights\Effects\EffectCast.cs" />
+    <Compile Include="World\Maps\Fights\Effects\EffectProcessor.cs" />
+    <Compile Include="World\Maps\Fights\Fight.cs" />
+    <Compile Include="World\Maps\Fights\Fighter.cs" />
+    <Compile Include="World\Maps\Fights\FighterBuff.cs" />
+    <Compile Include="World\Maps\Fights\FighterSpell.cs" />
+    <Compile Include="World\Maps\Fights\FightTeam.cs" />
+    <Compile Include="World\Maps\Zaapis\ZaapisManager.cs" />
+    <Compile Include="World\Maps\Zaaps\Zaap.cs" />
+    <Compile Include="World\Maps\Zaapis\Zaapis.cs" />
+    <Compile Include="World\Maps\Zaaps\ZaapsManager.cs" />
+    <Compile Include="Network\Game\GameClient.cs" />
+    <Compile Include="Network\Game\GameCommander.cs" />
+    <Compile Include="Network\Game\GameParser.cs" />
+    <Compile Include="Network\Game\GameServer.cs" />
+    <Compile Include="World\Characters\Character.cs" />
+    <Compile Include="World\Characters\CharacterChannels.cs" />
+    <Compile Include="World\Characters\CharacterFaction.cs" />
+    <Compile Include="World\Characters\CharacterParty.cs" />
+    <Compile Include="World\Characters\CharacterState.cs" />
+    <Compile Include="World\Characters\Items\Char\CharacterItem.cs" />
+    <Compile Include="World\Characters\Items\Char\CharacterSet.cs" />
+    <Compile Include="World\Characters\Items\InventaryItems.cs" />
+    <Compile Include="World\Characters\Items\ItemsHandler.cs" />
+    <Compile Include="World\Characters\NPC\NPCMap.cs" />
+    <Compile Include="World\Characters\Spells\Char\ChararcterSpell.cs" />
+    <Compile Include="World\Characters\Spells\InventarySpells.cs" />
+    <Compile Include="World\Effects\EffectAction.cs" />
+    <Compile Include="World\Effects\EffectItem.cs" />
+    <Compile Include="World\Effects\EffectSpell.cs" />
+    <Compile Include="World\Exchanges\Exchange.cs" />
+    <Compile Include="World\Exchanges\ExchangeItem.cs" />
+    <Compile Include="World\Exchanges\ExchangesManager.cs" />
+    <Compile Include="World\Maps\Map.cs" />
+    <Compile Include="World\Maps\Monsters\Monster.cs" />
+    <Compile Include="World\Maps\Monsters\MonsterIA.cs" />
+    <Compile Include="World\Maps\Monsters\MonstersGroup.cs" />
+    <Compile Include="World\Maps\Pathfinding.cs" />
+    <Compile Include="World\Chat.cs" />
+    <Compile Include="World\Conditions\NPCConditions.cs" />
+    <Compile Include="World\Conditions\TriggerCondition.cs" />
+    <Compile Include="World\Save.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CHG.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Databases\sundofus.sql" />
+    <Content Include="favicon.ico" />
+    <Content Include="Librairies\MySql.Data.dll" />
+    <Content Include="Librairies\SilverSock.dll" />
+    <Content Include="settings.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Databases\Paths\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

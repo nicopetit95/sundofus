@@ -1,0 +1,13 @@
+﻿<?xml version="1.0"?>
+<Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <RealmAddress>127.0.0.1</RealmAddress>
+  <RealmPort>444</RealmPort>
+  <GameAddress>127.0.0.1</GameAddress>
+  <GamePort>5555</GamePort>
+  <GameID>6</GameID>
+  <MaxPlayer>600</MaxPlayer>
+  <DBServer>127.0.0.1</DBServer>
+  <DBUser>root</DBUser>
+  <DBPass></DBPass>
+  <DBName>old_sundofus</DBName>
+</Config>

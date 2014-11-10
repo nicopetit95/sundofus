@@ -1,0 +1,182 @@
+﻿/!\ Copyright Ghost [c] 2012 - 2013
+
+SunDofus v0.1.0.0 :
+-> [Unknow date] Ajout de la connexion
+-> [Unknow date] Ajout du Multi-Server
+-> [Unknow date] Ajout des créations / suppressions / sélections personnages
+-> [Unknow date] Ajout des questions / réponses secrètes
+
+SunDofus v0.1.1.18 :
+-> [Unknow date] Ajout du chat (canaux général & privé (messages privés))
+-> [Unknow date] Ajout des affichages des maps
+-> [Unknow date] Ajout des déplacements sur les maps
+
+SunDofus v0.1.2.27 :
+-> [Unknow date] Ajout des téléportations sur les maps (Triggers)
+-> [Unknow date] Ajout des stats (de base pour les affichages, et éviter les 'Undefined')
+-> [Unknow date] Ajout de l'abonnement
+
+SunDofus v0.1.3.32 :
+-> [Unknow date] Ajout des stats (Ajout de stats)
+-> [Unknow date] Ajout des sauvegardes (Personnages & Affichage dans la liste des serveurs)
+-> [Unknow date] Ajout des commande en console
+-> [Unknow date] ajout de la prospection / Esquive PA - PM
+
+SunDofus v0.1.4.41 :
+-> [Unknow date] Ajout / Suppression d'items
+-> [Unknow date] Ajout des changements de positions d'items
+-> [Unknow date] Ajout des items lors de la selection du personnage et sur la map
+-> [Unknow date] Ajout des sauvegardes / chargements des items (pour le personnage)
+-> [Unknow date] Ajout des items_usables (items utilisables)
+-> [Unknow date] Rectification de bug sur le changement des cannaux
+-> [Unknow date] Rectification de l'esquive PA / PM
+-> [Unknow date] Ajout des effets suivant pour les items :
+    +PA / +PM / +PO / +Ini / +PP / +Vita / +Vie / +Intel / +Sagesse
+    +Force / +Intel / +Chance / +Agi
+
+SunDofus v0.1.5.47 :
+-> [Unknow date] Ajout des armures (Normal - Pvp - %- %Pvp)
+-> [Unknow date] Ajout de tout les effets pour les items (ou presque ?)
+-> [Unknow date] Ajout des conditions pour les items
+-> [Unknow date] Ajout des points de vie pour les familiers
+-> [Unknow date] Correction d'un bug sur les affichages des items de classes
+
+SunDofus v0.1.6.53 :
+-> [Unknow date] Ajout des cadeaux
+-> [Unknow date] Ajout de la file d'attente au serveur de connexion
+-> [Unknow date] Rectification du bug au chargement des maps (Merci Quentin)
+-> [Unknow date] Rectification d'une faille critique (Merci Vendethiel)
+-> [Unknow date] Ajout de cache pour les comptes, cadeaux, serveurs (reload automatiquement, temps dans la configuration)
+
+SunDofus v0.1.7.59 :
+-> [Unknow date] Rectification d'une faille majeure entre la communication Realm >> Auth
+-> [Unknow date] Ajout partiel des sorts (Apprendre)
+-> [Unknow date] Renommage du Selector en Serveur d'authentification (SunDofus.Auth)
+
+SunDofus v0.1.8.68 :
+-> [Unknow date] Ajout du up de level des personnages
+-> [Unknow date] Ajout de l'apprentissage des sorts
+-> [Unknow date] Ajout du up de level des sorts
+-> [Unknow date] Ajout du déplacement des sorts (dans la barre des sorts bien sûr)
+-> [Unknow date] Ajout de la customisation des maps de départ pour les classes
+-> [Unknow date] Ajout de plusieurs commandes admins
+-> [Unknow date] Ajout des chats commerces, recrutements + antispam (Thx vEmu pour les AntiSpam)
+-> [Unknow date] Ajout d'une condition sur les items utilisables (si il se supprime ou non après l'utilisation)
+   (MustDelete <1> = doit etre surppimer | <0> ne doit pas etre supprimer)
+
+SunDofus v0.1.9.69 :
+-> [Unknow date] Rectification de la mise en valeur de l'IP du client dans la console pour le logger 'Info' (Mangeta)
+-> [Unknow date] Rectification d'un bug concernant l'affichage des loggers en console
+-> [Unknow date] Ajout de plusieurs possibilités d'actions pour les triggers (L'actionID n'est plus la téléportation par défault)
+
+SunDofus v0.2.0.75 :
+-> [Unknow date] Revu (non pas spécialement modification) d'une grosse partie des variables et fonctions (méthodes comprises)
+    du code, pour de plus grandes performances et un repérage plus facile (les variables étaient juste dégueulasses oops)
+-> [Unknow date] Rectification d'un bug sur la connexion (parsage du Ticket)
+-> [Unknow date] Rectification d'un bug sur les cadeaux et optimisation
+-> [Unknow date] Rectification d'un bug lors du chargement des maps (qui avait un ID trop long ex:40000)
+-> [Unknow date] Rectification d'une possible faille expoitable lors de la suppression d'un personnage
+-> [Unknow date] Rectification d'une possible faille expoitable lors de la selection d'un personnage
+-> [Unknow date] Rectification d'un bug lors d'un path de déplacement non valide
+
+SunDofus v0.2.2.134 (DofusOrigin) :
+-> [07.01.2013] Rectification des parsages de ticket, au bout d'un certain nombre de ticket, il était possible de voler l'identité d'un autre
+-> [07.01.2013] Ajout des descriptions en base de donnée(items) pour les conversions au format .SWF (Du prochain tool)
+-> [08.01.2013] Rectification de la file d'attente, elle est désormait fonctionnelle !
+-> [08.01.2013] Revu totalement la gestion de personnages pour une plus grande stabilité du système
+-> [08.01.2013] Ajout des PNJ statiques et dynamiques (qui bougent tout seul sur la map (Option en DB))
+-> [10.01.2013] Correction de la sauvegarde des personnages
+-> [10.01.2013] Suppression du mode débug des triggers
+-> [23.01.2013] Ajout des monstres (affichage + déplacements auto)
+-> [23.01.2013] Rectification des PNJ et des monstres qui pouvait se rendre invisible (faute de faces du skin)
+-> [24.01.2013] Achat et vente sur les PNJ
+-> [25.01.2013] Correction du bug des affichages des jets des items en vente sur les PNJ
+-> [25.01.2013] Correction d'un bug sur les empilations d'items à même jets
+-> [27.01.2013] Correction du bug sur la disparition d'item lors d'un mouvement de positions
+-> [28.01.2013] Ajout des échanges
+-> [28.01.2013] Annulation automatiquement d'une demande en echange si l'un des personnages se déconnecte
+-> [29.01.2013] Correction du bug du jet qui redevenait aléatoire sur les items après un échange
+-> [29.01.2013] Rectification du bug de quantité sur les objets en échange
+-> [30.01.2013] Ajout de l'invitation dans un groupe
+-> [30.01.2013] Ajout des groupes
+-> [30.01.2013] Ajout de l'annulation auto. lors d'une déconnexion de l'inviteur ou de l'invité avec comme sujet un groupe
+-> [01.02.2013] Ajout de l'annulation automatique de la suivie d'un personnage si il déconnecte
+-> [02.02.2013] Ajout de la suivie possible par tout le groupe
+-> [02.02.2013] Mise en place de l'annulation du suivis lorsque le personnage quitte le groupe
+-> [03.02.2013] Ajout des ImPacket lors d'un suivis ou de l'arrêt d'un suivis
+-> [03.02.2013] Ajout des ImPacket lors du début et une fin de sauvegarde
+-> [03.02.2013] Rectification de l'enpacktage en UTF8 (message avec accent etc)
+-> [03.02.2013] Ajout des cannaux de discussions "Groupe" "Admin"
+-> [03.02.2013] Ajout des dialogues avec les NPC
+-> [03.02.2013] Seules les réponses avec les conditions atteintes sont désormais affichées des dialogues avec les NPC
+-> [03.02.2013] Mise en place d'une question de secours lorsque le client n'atteind pas les conditions demandées
+-> [07.02.2013] Suppression du cache des comptes qui sont chargés maintenant par rapport à la file d'attente
+-> [09.02.2013] Ajout de la possibilité de changé l'image lors de l'affichage des cadeaux
+-> [09.02.2013] Ajout du refresh lors de la connexion de quelqu'un sur le Realm dans la table "Connected"
+-> [09.02.2013] Ajout du parsage de la liste des connectés sur le Realm dans la table "Connected"
+-> [09.02.2013] Reset automatiquement de la liste lors du démarage de l'émulateur pour éviter le mauvais affichage des connectés
+-> [11.02.2013] Rectification de failles critiques pour la suppression et selection de personnage
+-> [12.02.2013] Ajout de tous les paramètres en configuration
+-> [12.02.2013] Ajout des demandes en défis
+-> [12.02.2013] Ajout de l'acceptation d'une demande
+-> [12.02.2013] Ajout du refus d'une demande de défis
+-> [12.02.2013] Annulation automatique de la demande lors d'une déconnexion d'un des deux facteurs
+-> [12.02.2013] Déconnexion automatique lors d'une deuxième connexion sur un même compte
+
+SunDofus v0.3.0.140 :
+-> [16.04.2013] Modification du code (mise en place d'une seule application le realm et le world, possibilité de multiserveurs distants)
+-> [16.04.2013] Rectification du bug sur la création des personnages
+-> [16.04.2013] Ajout d'un "PassKey" entre les worlds et realms (question sécurité pour la connexion pour le multi-server)
+
+SunDofus v0.3.1.169 :
+-> [18.04.2013] Réparation de la création des personnages
+-> [18.04.2013] Refonte de la file d'attente
+-> [19.04.2013] Quelques petites modifications du code
+-> [19.04.2013] Réparation de la suppression des personnages
+-> [19.04.2013] Réparation de l'affichage de la liste des personnages
+-> [20.04.2013] Refonte des cannaux de discussions
+-> [20.04.2013] Ajout du cannal 'Incarnam' (recu des messages seulement sur Incarnam, il me manque les subareas du dj)
+-> [20.04.2013] Ajout de la première lettre du pseudo aléatoire en majuscule
+-> [20.04.2013] Envois des messages 'Incarnam' seulement sur incarnam et niveau inférieur à 31
+-> [20.04.2013] Revu total du changelog et suppresion de lignes inutiles
+-> [21.04.2013] Ajout de la couleur verte en chat sur dofus (serveur message)
+-> [11.05.2013] Réecriture de tous les models du world (Get/Set)
+-> [13.05.2013] Ajout de l'update dans les groupes lors d'un changement d'item
+-> [13.05.2013] Ajout des alignements des joueurs (activation, perte de point d'honneur, level, vue d'extérieur)
+-> [13.05.2013] Ajout des amis et des ennemis -> Message lors de la connexion, stats cachés etc etc
+-> [13.05.2013] Ajout du chat d'alignement (minimum grade 3, et tous les joueurs du même alignement recoive le message)
+-> [14.05.2013] Ajout des zaapis (conditions, pertes kamas, alignements, panels, téléportations)
+-> [14.05.2013] Ajout des zaaps (apprentissages, positions sauvegardées, panels, téléportations)
+-> [14.05.2013] Ajout des cellules non marchables et donc des restrictions par rapport aux mouvements des personnages / NPC / Monstres
+
+SunDofus v0.3.2.188 :
+-> [16.05.2013] Correction de beaucoup de petits bugs (Merci Subv pour son fork et ses corrections)
+-> [16.05.2013] Ajout de la sauvegarde automatique (Merci Subv qui m'a empêché de le faire du coup)
+-> [16.05.2013] Ajout de l'uptime du serveur et de la commande .infos
+-> [23.05.2013] Ajout d'une base pour les métiers (merci Subv)
+-> [24.05.2013] Ajout des questions à paramètres (ex : banque avec le nombre de kamas)
+-> [17.08.2013] Amélioration des performances par un multi-Thread entre le realm/game
+-> [17.08.2013] Ajout du README.TXT et suppression d'une classe qui n'avait pas lieu d'être (SyncAction.cs)
+-> [17.08.2013] Ajout des guildes (invitations, expulsions, rang, exp, affichage, ... Il manque la gestion complète des droits envers une action, les enclos et les maisons)
+-> [17.08.2013] Ajout des percepteurs (pose, déplacement, affichage, parler)
+-> [18.08.2013] Ajout total des banques
+
+SunDofus v0.3.2.195
+-> [16.10.2013] Revu presque total du code (normalisation, string.Concat ou string.Format, ...)
+-> [16.10.2013] Correction des paths avec la prise en compte des Triggers (Pathfinding, Merci Persi2)
+-> [16.10.2013] Rectification de l'affichage extérieur des guildes et suivant le nombre de membre (personnalisable en configuration)
+-> [16.10.2013] Téléportation avec un double clic sur la géoposition (GMLevel en configuration, Merci Persi2)
+-> [16.10.2013] Durant le mode débug, l'émulateur ne charge plus les triggers (permettant un lancement beaucoup plus rapide)
+-> [16.10.2013] Rectification de la file d'attente du serveur d'authentification et mise en place d'une autre file d'attente sur le serveur de jeu !
+
+SunDofus v0.3.3.X
+-> [17.10.2013] Gestion complète des droits de guilde (impossible d'effectuer ce qui n'est pas possible avec WPEPro par exemple)
+-> [17.10.2013] Rectification de l'update des groupes lors d'un changement d'items (ne se lance que lorsque l'item est sur le personnage et non plus simplement "bougé")
+-> [17.10.2013] Ajout des défis (et une grosse partie des combats : merci Persi2, les effets de sort sont à tester)
+-> [18.10.2013] Ajout du temps en fin de combat
+
+SunDofus v0.5.0.0
+-> [10.11.2014] Reprise du projet, réorganisation des classes / namespaces
+-> [10.11.2014] Passage du projet en MonoServer
+-> [10.11.2014] Suppression des Queues (inutiles, a moins d'avoir la communauté d'Ankama sur son serveur!)
+-> [10.11.2014] Correction de l'UpTime lors de la commande ".infos"
