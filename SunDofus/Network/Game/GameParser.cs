@@ -1363,8 +1363,16 @@ namespace SunDofus.Network.Game
                         {
                             if (Client.Player.GetMap().MonstersGroups.Any(x => x.MapCell == Client.Player.State.MoveToCell))
                             {
-                                Client.Player.GetMap().AddFight(new MonsterFight(Client.Player,
-                                    Client.Player.GetMap().MonstersGroups.First(x => x.MapCell == Client.Player.State.MoveToCell), Client.Player.GetMap()));
+                                var group = Client.Player.GetMap().MonstersGroups.First(x => x.MapCell == Client.Player.State.MoveToCell);
+                                var fight = new MonsterFight(Client.Player, group, Client.Player.GetMap());
+
+                                Client.Player.GetMap().AddFight(fight);
+                                
+                                foreach (var mob in group.Monsters)
+                                {
+                                    var otherMonster = new MonsterFighter(mob, fight, Client.Player.GetMap().NextNpcID());
+                                    fight.FighterJoin(otherMonster, 1);
+                                }           
 
                                 Client.Player.State.OnMove = false;
                                 Client.Player.State.MoveToCell = -1;

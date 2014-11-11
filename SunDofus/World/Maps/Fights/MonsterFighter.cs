@@ -16,11 +16,11 @@ namespace SunDofus.World.Maps.Fights
 
         public int InitCell { get; set; }
 
-        public MonsterFighter(Monster monster, Fight fight) 
+        public MonsterFighter(Monster monster, Fight fight, int nId) 
             : base(FighterType.MONSTER, fight)
         {
             myMonster = monster;
-            id = fight.Map.NextNpcID();
+            id = nId;
 
             stats = new GenericStats();
             stats.GetStat(StatEnum.MaxPA).Base = monster.MonsterLevel.AP;

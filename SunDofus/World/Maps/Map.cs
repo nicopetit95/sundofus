@@ -1,4 +1,5 @@
 ﻿using SunDofus.World.Maps.Fights;
+using SunDofus.World.Maps.Monsters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +48,15 @@ namespace SunDofus.World.Maps
 
             lock(MonstersGroups)
                 MonstersGroups.Add(new Monsters.MonstersGroup(Model.Monsters, this));
+        }
+
+        public void RemoveMonstersGroup(MonstersGroup group)
+        {
+            Send(string.Concat("GM|-", group.ID));
+
+            lock (MonstersGroups)
+                MonstersGroups.Remove(group);
+
         }
 
         public string FormatFightCount()
@@ -147,7 +157,7 @@ namespace SunDofus.World.Maps
         {
             var i = -1;
 
-            while (Npcs.Any(x => x.ID == i) || MonstersGroups.Any(x => x.ID == i) || Fights.Any(x => x.GetFighters().Any(y => y.ID == i)))
+            while (Npcs.Any(x => x.ID == i) || MonstersGroups.Any(x => x.ID == i) || Fights.Any(x => x.GetFighters().ToList().Any(y => y.ID == i)))
                 i -= 1;
 
             return i;

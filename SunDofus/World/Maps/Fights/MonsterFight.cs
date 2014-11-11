@@ -15,18 +15,14 @@ namespace SunDofus.World.Maps.Fights
             : base(FightType.PVM, map)
         {
             Fighter attacker = new CharacterFighter(character, this);
-            MonsterFighter monster = new MonsterFighter(group.Monsters[0], this);
+            MonsterFighter monster = new MonsterFighter(group.Monsters[0], this, group.ID);
 
             monster.InitCell = group.MapCell;
+
             group.Monsters.Remove(group.Monsters[0]);
+            map.RemoveMonstersGroup(group);
 
-            FightInit(attacker, monster);
-
-            foreach (var mob in group.Monsters)
-            {
-                var otherMonster = new MonsterFighter(mob, this);
-                FighterJoin(otherMonster, 1);
-            }            
+            FightInit(attacker, monster); 
         }
 
         public override int StartTime()

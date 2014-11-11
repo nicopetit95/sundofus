@@ -413,6 +413,9 @@ namespace SunDofus.World.Maps.Fights
 
                     Send(FormatFighterShow(fighter), fighter);
 
+                    if (!isLeader)
+                        myMap.Send(FormatFlagFighterShow(fighter));
+
                     break;
             }
         }
