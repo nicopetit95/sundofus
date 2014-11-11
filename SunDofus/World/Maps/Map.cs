@@ -147,7 +147,7 @@ namespace SunDofus.World.Maps
         {
             var i = -1;
 
-            while (Npcs.Any(x => x.ID == i) || MonstersGroups.Any(x => x.ID == i))
+            while (Npcs.Any(x => x.ID == i) || MonstersGroups.Any(x => x.ID == i) || Fights.Any(x => x.GetFighters().Any(y => y.ID == i)))
                 i -= 1;
 
             return i;

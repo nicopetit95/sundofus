@@ -42,11 +42,11 @@ namespace SunDofus.Utilities
             writeFileStream.Close();
         }
 
-        private static string version;
+        private static string version = string.Empty;
 
         public static string Version(string nVersion = "")
         {
-            if (version == "")
+            if (version.Equals(string.Empty))
                 version = nVersion;
 
             return version;

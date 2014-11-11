@@ -130,6 +130,8 @@
     <Compile Include="World\Maps\Fights\FighterBuff.cs" />
     <Compile Include="World\Maps\Fights\FighterSpell.cs" />
     <Compile Include="World\Maps\Fights\FightTeam.cs" />
+    <Compile Include="World\Maps\Fights\MonsterFight.cs" />
+    <Compile Include="World\Maps\Fights\MonsterFighter.cs" />
     <Compile Include="World\Maps\Zaapis\ZaapisManager.cs" />
     <Compile Include="World\Maps\Zaaps\Zaap.cs" />
     <Compile Include="World\Maps\Zaapis\Zaapis.cs" />
@@ -168,9 +170,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CHG.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="config.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Databases\sundofus.sql" />

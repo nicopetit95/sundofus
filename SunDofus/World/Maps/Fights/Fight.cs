@@ -211,7 +211,19 @@ namespace SunDofus.World.Maps.Fights
             builder.Append(myTeam1.Leader.ID).Append(';').Append(myTeam1.Cell).Append(';');
             builder.Append('0').Append(';').Append("-1").Append('|');
             builder.Append(myTeam2.Leader.ID).Append(';').Append(myTeam2.Cell).Append(';');
-            builder.Append('0').Append(';').Append("-1");
+
+            switch(myType)
+            { 
+                case FightType.PVM:
+                    builder.Append('1');
+                    break;
+
+                default :
+                    builder.Append('0');
+                    break;
+            }
+
+            builder.Append(';').Append("-1");
 
             return builder.ToString();
         }
@@ -388,6 +400,18 @@ namespace SunDofus.World.Maps.Fights
 
                     foreach (Fighter forFighter in GetFighters())
                         if (forFighter.FightReady) fighter.Character.NClient.Send(FormatFightReady(forFighter));
+
+                    break;
+
+                case FighterType.MONSTER:
+
+                    switch(team)
+                    {
+                        case 0: myTeam1.FighterJoin(fighter, isLeader); break;
+                        case 1: myTeam2.FighterJoin(fighter, isLeader); break;
+                    }
+
+                    Send(FormatFighterShow(fighter), fighter);
 
                     break;
             }

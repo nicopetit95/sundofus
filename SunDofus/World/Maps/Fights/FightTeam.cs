@@ -125,7 +125,17 @@ namespace SunDofus.World.Maps.Fights
             if (isLeader)
             {
                 myLeader = Fighter;
-                myCell = Fighter.Character.MapCell;
+
+                switch(Fighter.Type)
+                {
+                    case FighterType.CHARACTER:
+                        myCell = Fighter.Character.MapCell;
+                        break;
+
+                    case FighterType.MONSTER:
+                        myCell = ((MonsterFighter)Fighter).InitCell;
+                        break;
+                }
             }
 
             myFighters.Add(Fighter);

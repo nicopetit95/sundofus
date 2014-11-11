@@ -12,10 +12,10 @@ namespace SunDofus.World.Maps.Monsters
 
         public int ID { get; set; }
         public int MaxSize { get; set; }
+        public int MapCell { get; set; }
 
         private Map map;
-        private int cell;
-        private int dir;
+        private int mapDir;
 
         private Timer timer;
         private Dictionary<int, List<int>> mbase;
@@ -44,14 +44,14 @@ namespace SunDofus.World.Maps.Monsters
         {
             timer.Interval = Utilities.Basic.Rand(10000, 15000);
 
-            var path = new Maps.Pathfinding("", map, cell, dir);
+            var path = new Maps.Pathfinding("", map, MapCell, mapDir);
             var newDir = Utilities.Basic.Rand(0, 3) * 2 + 1;
-            var newCell = Pathfinding.NextCell(map, cell, newDir);
+            var newCell = Pathfinding.NextCell(map, MapCell, newDir);
 
             if (newCell <= 0)
                 return;
 
-            path.UpdatePath(Maps.Pathfinding.GetDirChar(dir) + Maps.Pathfinding.GetCellChars(cell) + Maps.Pathfinding.GetDirChar(newDir) +
+            path.UpdatePath(Maps.Pathfinding.GetDirChar(mapDir) + Maps.Pathfinding.GetCellChars(MapCell) + Maps.Pathfinding.GetDirChar(newDir) +
                 Maps.Pathfinding.GetCellChars(newCell));
 
             var startpath = path.GetStartPath;
@@ -62,8 +62,8 @@ namespace SunDofus.World.Maps.Monsters
 
             if (cellpath != "")
             {
-                cell = path.destination;
-                dir = path.direction;
+                MapCell = path.destination;
+                mapDir = path.direction;
 
                 var packet = string.Format("GA0;1;{0};{1}", ID, startpath + cellpath);
 
@@ -99,13 +99,13 @@ namespace SunDofus.World.Maps.Monsters
 
         private void RefreshMappos()
         {
-            dir = Utilities.Basic.Rand(0, 3) * 2 + 1;
-            cell = map.RushablesCells[Utilities.Basic.Rand(0, map.RushablesCells.Count - 1)];
+            mapDir = Utilities.Basic.Rand(0, 3) * 2 + 1;
+            MapCell = map.RushablesCells[Utilities.Basic.Rand(0, map.RushablesCells.Count - 1)];
         }
 
         public string PatternOnMap()
         {
-            var packet = string.Format("|+{0};{1};0;{2};", cell, dir, ID);
+            var packet = string.Format("|+{0};{1};0;{2};", MapCell, mapDir, ID);
 
             var ids = "";
             var skins = "";

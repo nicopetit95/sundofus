@@ -1360,7 +1360,19 @@ namespace SunDofus.Network.Game
                         if (Client.Player.State.InFight)
                             Client.Player.Fighter.Cell = Client.Player.State.MoveToCell;
                         else
+                        {
+                            if (Client.Player.GetMap().MonstersGroups.Any(x => x.MapCell == Client.Player.State.MoveToCell))
+                            {
+                                Client.Player.GetMap().AddFight(new MonsterFight(Client.Player,
+                                    Client.Player.GetMap().MonstersGroups.First(x => x.MapCell == Client.Player.State.MoveToCell), Client.Player.GetMap()));
+
+                                Client.Player.State.OnMove = false;
+                                Client.Player.State.MoveToCell = -1;
+                                return;
+                            }
+
                             Client.Player.MapCell = Client.Player.State.MoveToCell;
+                        }
 
                         Client.Player.State.OnMove = false;
                         Client.Player.State.MoveToCell = -1;
@@ -1375,7 +1387,7 @@ namespace SunDofus.Network.Game
                                 SunDofus.World.Effects.EffectAction.ParseEffect(Client.Player, trigger.ActionID, trigger.Args);
                             else
                                 Client.SendMessage("Im11");
-                        }
+                        }                        
                     }
 
                     return;

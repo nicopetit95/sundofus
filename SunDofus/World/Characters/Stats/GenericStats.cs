@@ -105,7 +105,7 @@ namespace SunDofus.World.Characters.Stats
 
         public int FormuleMaxPA(int baseValue, int equippedValue, int givenValue, int bonusValue)
         {
-            return (baseValue + equippedValue + givenValue + bonusValue) + (myCharacter.Level >= 100 ? 1 : 0);
+            return (baseValue + equippedValue + givenValue + bonusValue) + ((myCharacter != null ? (myCharacter.Level >= 100 ? 1 : 0) : 0));
         }
 
         public int FormuleEsquive(int baseValue, int equippedValue, int givenValue, int bonusValue)
