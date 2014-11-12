@@ -23,6 +23,7 @@ namespace SunDofus.World.Maps.Fights
             id = nId;
 
             stats = new GenericStats();
+            stats.GetStat(StatEnum.Vitalite).Base = monster.Life;
             stats.GetStat(StatEnum.MaxPA).Base = monster.MonsterLevel.AP;
             stats.GetStat(StatEnum.MaxPM).Base = monster.MonsterLevel.MP;
         }
@@ -44,8 +45,8 @@ namespace SunDofus.World.Maps.Fights
 
         public override int Life
         {
-            get { return myMonster.Life; }
-            set { myMonster.Life = value; }
+            get { return stats.GetStat(StatEnum.Vitalite).Total; }
+            set { stats.GetStat(StatEnum.Vitalite).Base = value; }
         }
 
         public override int Skin
@@ -70,7 +71,7 @@ namespace SunDofus.World.Maps.Fights
             {
                 builder.Append(this.Cell).Append(";1;0;");
                 builder.Append(ID).Append(";");
-                builder.Append(Name).Append(";-2;");
+                builder.Append(myMonster.Model.ID).Append(";-2;");
 
                 builder.Append(myMonster.Model.GfxID).Append("^100;");
                 builder.Append(myMonster.Level).Append(";");

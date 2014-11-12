@@ -343,7 +343,7 @@ namespace SunDofus.World.Characters
                 builder.Append(Utilities.Basic.DeciToHex(Color3)).Append(";");
                 builder.Append(GetItemsPos()).Append(";");
                 builder.Append(Life).Append(";");
-                builder.Append(6).Append(";").Append(3).Append(";");
+                builder.Append(Stats.GetStat(StatEnum.MaxPA).Total).Append(";").Append(Stats.GetStat(StatEnum.MaxPM).Total).Append(";");
                 builder.Append("0;0;0;0;0;");
                 builder.Append("0;0;");
                 builder.Append(Fighter.Team.ID).Append(";;");

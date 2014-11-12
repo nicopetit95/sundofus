@@ -257,6 +257,9 @@ namespace SunDofus.World.Maps.Fights.Effects
 
                 cast.Target.Life -= cast.Jet;
 
+                if (cast.Target.Life == 0)
+                    cast.Caster.Fight.Send("GA;103;" + cast.Caster.ID + ";" + cast.Target.ID);
+
                 cast.Caster.Fight.Send("GA;100;" + cast.Caster.ID + ';' + cast.Target.ID + ",-" + cast.Jet);
             }
         }

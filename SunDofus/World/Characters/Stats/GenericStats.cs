@@ -85,17 +85,17 @@ namespace SunDofus.World.Characters.Stats
 
         public int FormuleInitiative(int baseValue, int equippedValue, int givenValue, int bonusValue)
         {
-            return (GetStat(StatEnum.Force).Total + GetStat(StatEnum.Intelligence).Total + GetStat(StatEnum.Chance).Total + GetStat(StatEnum.Agilite).Total + (baseValue + equippedValue + givenValue + bonusValue)) * (myCharacter.Life / GetStat(StatEnum.MaxLife).Total);
+            return (GetStat(StatEnum.Force).Total + GetStat(StatEnum.Intelligence).Total + GetStat(StatEnum.Chance).Total + GetStat(StatEnum.Agilite).Total + (baseValue + equippedValue + givenValue + bonusValue)) * (myCharacter != null ? (myCharacter.Life / GetStat(StatEnum.MaxLife).Total) : 0);
         }
 
         public int FormuleProspection(int baseValue, int equippedValue, int givenValue, int bonusValue)
         {
-            return (baseValue + equippedValue + givenValue + bonusValue) + GetStat(StatEnum.Chance).Total / 10 + (myCharacter.Class == 3 ? 20 : 0);
+            return (baseValue + equippedValue + givenValue + bonusValue) + GetStat(StatEnum.Chance).Total / 10 + (myCharacter != null ? (myCharacter.Class == 3 ? 20 : 0) : 0);
         }
 
         public int FormuleMaxLife(int baseValue, int equippedValue, int givenValue, int bonusValue)
         {
-            return (baseValue + equippedValue + givenValue + bonusValue) + GetStat(StatEnum.Vitalite).Total + myCharacter.Level * 5;
+            return (baseValue + equippedValue + givenValue + bonusValue) + GetStat(StatEnum.Vitalite).Total + (myCharacter != null ? myCharacter.Level * 5 : 0);
         }
 
         public int FormuleMaxPods(int baseValue, int equippedValue, int givenValue, int bonusValue)

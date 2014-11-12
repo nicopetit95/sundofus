@@ -2787,6 +2787,7 @@ namespace SunDofus.Network.Game
             if (!Client.Player.State.InFight)
                 return;
 
+            Client.Player.Fight.State = FightState.WAITING;
             Client.Player.Fight.PlayerTurnReady(Client.Player.Fighter);
         }
 

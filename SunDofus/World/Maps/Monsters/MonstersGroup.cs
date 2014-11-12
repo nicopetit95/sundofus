@@ -14,6 +14,8 @@ namespace SunDofus.World.Maps.Monsters
         public int MaxSize { get; set; }
         public int MapCell { get; set; }
 
+        public bool StopTimer { get; set; }
+
         private Map map;
         private int mapDir;
 
@@ -22,7 +24,7 @@ namespace SunDofus.World.Maps.Monsters
 
         public MonstersGroup(Dictionary<int, List<int>> monsters, Map map)
         {
-
+            StopTimer = false;
             Monsters = new List<Monster>();
             mbase = monsters;
 
@@ -42,6 +44,12 @@ namespace SunDofus.World.Maps.Monsters
 
         private void Move(object e, EventArgs e2)
         {
+            if(StopTimer)
+            {
+                timer.Stop();
+                return;
+            }
+
             timer.Interval = Utilities.Basic.Rand(10000, 15000);
 
             var path = new Maps.Pathfinding("", map, MapCell, mapDir);

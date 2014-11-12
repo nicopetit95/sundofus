@@ -10,6 +10,7 @@ using SunDofus.World.Characters.Spells;
 using SunDofus.World.Effects;
 using SunDofus.Utilities;
 using SunDofus.World.Maps.Fights.Effects;
+using SunDofus.World.Maps.Monsters;
 
 namespace SunDofus.World.Maps.Fights
 {
@@ -556,7 +557,14 @@ namespace SunDofus.World.Maps.Fights
 
         private bool IsAllFightReady()
         {
-            return GetFighters().All(fighter => fighter.FightReady);
+            switch(myType)
+            {
+                case FightType.PVM:
+                    return GetFighters().Where(x => x.Type == FighterType.CHARACTER).ToList().All(fighter => fighter.FightReady);
+
+                default:
+                    return GetFighters().All(fighter => fighter.FightReady);
+            }
         }
 
         #endregion
@@ -677,6 +685,9 @@ namespace SunDofus.World.Maps.Fights
             myCurrentFighter.Buffs.OnTurnBegin();
 
             Send(FormatTurnStart());
+
+            if (CurrentFighter.Type == FighterType.MONSTER)
+                new MonsterIA((MonsterFighter)CurrentFighter); 
         }
 
         private void NextFighter()
@@ -740,7 +751,8 @@ namespace SunDofus.World.Maps.Fights
 
             fighter.TurnReady = true;
 
-            fighter.Character.NClient.Send("BN");
+            if(fighter.Character != null)
+                fighter.Character.NClient.Send("BN");
 
             if (IsAllTurnReady())
                 TurnStart();
@@ -753,7 +765,7 @@ namespace SunDofus.World.Maps.Fights
 
         public void WaitFighters()
         {
-            Fighter[] NoReadyFighters = GetFighters().Where(x => !x.TurnReady).ToArray();
+            Fighter[] NoReadyFighters = GetFighters().Where(x => !x.TurnReady && x.Type == FighterType.CHARACTER).ToArray();
 
             if (NoReadyFighters.Length == 1)
                 Send("Im128;" + NoReadyFighters[0].Name);

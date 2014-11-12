@@ -18,16 +18,19 @@ namespace SunDofus.World.Maps.Fights
             MonsterFighter monster = new MonsterFighter(group.Monsters[0], this, group.ID);
 
             monster.InitCell = group.MapCell;
+            group.StopTimer = true;
 
             group.Monsters.Remove(group.Monsters[0]);
             map.RemoveMonstersGroup(group);
 
             FightInit(attacker, monster); 
+
+            
         }
 
         public override int StartTime()
         {
-            return 0;
+            return 45000;
         }
 
         public override int TurnTime()
