@@ -24,8 +24,6 @@ namespace SunDofus.World.Maps.Fights
             map.RemoveMonstersGroup(group);
 
             FightInit(attacker, monster); 
-
-            
         }
 
         public override int StartTime()

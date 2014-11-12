@@ -18,7 +18,7 @@ namespace SunDofus.World.Characters.Stats
 
             myStats.Add(new GenericStat(StatEnum.Initiative, new EffectEnum[] { EffectEnum.AddInitiative }, new EffectEnum[] { EffectEnum.SubInitiative }, 100, FormuleInitiative));
             myStats.Add(new GenericStat(StatEnum.Prospection, new EffectEnum[] { EffectEnum.AddProspection }, new EffectEnum[] { EffectEnum.SubProspection }, 100, FormuleProspection));
-            myStats.Add(new GenericStat(StatEnum.MaxLife, new EffectEnum[] { }, new EffectEnum[] { }, 50, FormuleMaxLife));
+            myStats.Add(new GenericStat(StatEnum.MaxLife, new EffectEnum[] { }, new EffectEnum[] { }, myCharacter != null ? 50 : 0, FormuleMaxLife));
             myStats.Add(new GenericStat(StatEnum.MaxPods, new EffectEnum[] { }, new EffectEnum[] { }, 1000, FormuleMaxPods));
 
             myStats.Add(new GenericStat(StatEnum.Vitalite, new EffectEnum[] { EffectEnum.AddVitalite, EffectEnum.AddVie }, new EffectEnum[] { EffectEnum.SubVitalite }));
@@ -95,7 +95,7 @@ namespace SunDofus.World.Characters.Stats
 
         public int FormuleMaxLife(int baseValue, int equippedValue, int givenValue, int bonusValue)
         {
-            return (baseValue + equippedValue + givenValue + bonusValue) + GetStat(StatEnum.Vitalite).Total + (myCharacter != null ? myCharacter.Level * 5 : 0);
+            return (baseValue + equippedValue + givenValue + bonusValue) + GetStat(StatEnum.Vitalite).Total + (myCharacter != null ? (myCharacter.Level * 5) : 0);
         }
 
         public int FormuleMaxPods(int baseValue, int equippedValue, int givenValue, int bonusValue)

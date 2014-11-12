@@ -49,6 +49,8 @@ namespace SunDofus.Network.Game
 
         public void Send(string message)
         {
+            Console.WriteLine(message);
+
             lock(locker)
                 this.SendDatas(message);
         }
