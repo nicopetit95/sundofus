@@ -69,6 +69,11 @@ namespace SunDofus.World.Maps.Fights
             }
         }
 
+        public bool HasBuff(EffectEnum type, BuffActiveType active)
+        {
+            return myBuffActives[active].Any(x => x.Type == type);
+        }
+
         public void OnTurnBegin()
         {
             foreach (EffectCast buff in myBuffActives[BuffActiveType.ACTIVE_BEGINTURN])

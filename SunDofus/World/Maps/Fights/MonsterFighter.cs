@@ -17,6 +17,8 @@ namespace SunDofus.World.Maps.Fights
 
         public int InitCell { get; set; }
 
+        public int IA { get { return myMonster.Model.IA; } }
+
         public MonsterFighter(Monster monster, Fight fight, int nId) 
             : base(FighterType.MONSTER, fight)
         {
